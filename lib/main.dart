@@ -17,10 +17,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-
-      theme: ThemeData(scaffoldBackgroundColor: Colors.white,appBarTheme: const AppBarTheme(
-        backgroundColor: Colors.blue,
-      ),),
+      theme: ThemeData(
+        scaffoldBackgroundColor: Colors.white,
+        appBarTheme: const AppBarTheme(
+          backgroundColor: Colors.blue,
+        ),
+      ),
       home: const FelicaBalanceReader(),
       debugShowCheckedModeBanner: false,
     );
@@ -38,10 +40,10 @@ class FelicaBalanceReader extends HookWidget {
     final isAvailable = useState(false);
     final isReading = useState(false);
     List<int> _createReadWithoutEncryptionCommand(
-        List<int> idm,
-        List<int> serviceCode,
-        List<int> blockList,
-        ) {
+      List<int> idm,
+      List<int> serviceCode,
+      List<int> blockList,
+    ) {
       return [
         0, // ダミー。あとで長さを入れる
         0x06, // コマンドコード: Read Without Encryption
@@ -75,7 +77,7 @@ class FelicaBalanceReader extends HookWidget {
             final command = _createReadWithoutEncryptionCommand(
                 idm, serviceCode, blockList);
             final response =
-            await nfcF.transceive(data: Uint8List.fromList(command));
+                await nfcF.transceive(data: Uint8List.fromList(command));
 
             log(response.length.toString());
 
@@ -201,7 +203,10 @@ class FelicaBalanceReader extends HookWidget {
                   ),
                 ),
               ],
-              Text(result.value, style: const TextStyle(fontSize: 32)),
+              Text(
+                result.value,
+                style: const TextStyle(fontSize: 28),
+              ),
               ElevatedButton.icon(
                 onPressed: isReading.value ? null : readBalance,
                 style: ElevatedButton.styleFrom(
