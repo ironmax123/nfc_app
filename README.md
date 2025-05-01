@@ -1,16 +1,12 @@
 # nfc_app
+交通系IC残高読み取りアプリです
 
-A new Flutter project.
+## 検証
+⭕️　交通系IC
+❌　その他ICカード
 
-## Getting Started
+**環境**
+Android 14,OneUI 6.1.1
+Galaxy Z fold3 5G SC55B
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+iOS未検証
