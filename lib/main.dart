@@ -210,15 +210,23 @@ class FelicaBalanceReader extends HookWidget {
               ElevatedButton.icon(
                 onPressed: isReading.value ? null : readBalance,
                 style: ElevatedButton.styleFrom(
+                  backgroundColor:
+                      isReading.value ? Colors.grey : Colors.blue[100],
                   padding: const EdgeInsets.symmetric(
                     horizontal: 40,
                     vertical: 16,
                   ),
                 ),
-                icon: const Icon(Icons.nfc),
+                icon: const Icon(
+                  Icons.nfc,
+                  color: Colors.black,
+                ),
                 label: Text(
                   isReading.value ? '読み取り中...' : 'NFCを読み取る',
-                  style: const TextStyle(fontSize: 18),
+                  style: const TextStyle(
+                    fontSize: 18,
+                    color: Colors.black,
+                  ),
                 ),
               ),
             ],
